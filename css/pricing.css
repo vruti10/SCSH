@@ -1,0 +1,742 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'KoHo', sans-serif;
+    user-select: none;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primary-color: #175AA9;
+    --text-one: #2b2b2b;
+    --text-two: #fff;
+    --three-color: #aaa;
+    --four-color: #333;
+    --five-color: #acacac;
+    --six-color: #f0f0f0;
+    --seven-color: #307CD6;
+    --eight-color: #175AA9;
+    --nine-color: #9CC9FF;
+    --ten-color: #36486B;
+}
+
+/* navbar start */
+
+.d-1_nav{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 100px;
+    color: var(--text-two);
+}
+
+
+
+#main_logo{
+    height: 47px;
+    width: 105px;
+}
+
+.menu_btn{
+    display: none;
+}
+
+.menu_close_btn{
+    display: none;
+}
+
+.d-1_nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.menu{
+    position: absolute;
+    background: var(--text-two);
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    display: none;
+    top: -100%;
+    transition: 0.3s;
+}
+
+.menu.active{
+    top: 0;
+}
+
+.menu li{
+    margin: 5px;
+}
+
+.menu.active{
+    top: 0;
+}
+
+.menu li a{
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: var(--text-one);
+    font-weight: 500;
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: url(../images/menu-regular-24.png);
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: center;
+    cursor: pointer;
+    display: none;
+}
+
+.toggle.active{
+    background: url(../images/x-regular-36.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    filter: invert(1);
+    z-index: 101;
+}
+
+.menu li a:hover{
+    color: var(--primary-color);
+}
+
+.d-1_logo{
+    font-size: 24px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.d-1_nav ul li a{
+    font-size: 20px;
+    text-decoration: none;
+    margin: 0 25px;
+    color: var(--text-two);
+    letter-spacing: 3px;
+}
+
+.d-1_login_btn a{
+    background-color: var(--text-one);
+    color: var(--text-two);
+    padding: 8px 40px;
+    border-radius: 50px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+
+.d-1_login_btn:hover a{
+    background-color: var(--text-two);
+    color: var(--text-one);
+    font-weight: bold;
+}
+
+/* navbar end */
+
+/* header start */
+.header{
+    height: auto;
+    width: 100%;
+    display: flex;
+    padding: 100px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.background{
+    background: linear-gradient(rgba(23, 90, 169,0.5),rgba(23,90,169,0.2)),url(../images/stock-1863880.jpg);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 60%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+/* tagline start */
+
+.tagline{
+    margin: 100px 0 50px;
+}
+
+.tagline img{
+    height: 350px;
+    width: auto;
+}
+/* tagline end */
+
+/* selector start */
+.selector{
+    height: 60px;
+    width: 400px;
+    background: var(--text-two);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 100px 0;
+}
+
+.selector button{
+    font-size: 30px;
+    /* color: var(--ten-color); */
+    font-weight: bold;
+    font-family: "Josefin Sans";
+    text-transform: capitalize;
+    margin: 0 auto;
+    z-index: 1;
+    border: none;
+    outline: none !important;
+    background: transparent;
+    cursor: pointer;
+}
+
+#month{
+    color: var(--ten-color);
+}
+
+#day{
+    color: var(--text-two);
+}
+
+.swich{
+    width: 200px;
+    height: 50px;
+    background: var(--primary-color);
+    border-radius: 10px;
+    position: absolute;
+    left: 5px;
+    top: auto;
+}
+
+.selector.active .swich{
+    right: 5px;
+    left: auto;
+}
+
+.selector.active #month{
+    color: var(--text-two);
+}
+
+.selector.active #day{
+    color: var(--ten-color);
+}
+/* selector end */
+
+/* pricing container start */
+/* .day-card{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.pricingcard{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.pricingcard.active .month-card{
+    display: flex;
+}
+
+.pricingcard.active .day-card{
+    display: none;
+}
+
+.month-card{
+    display: none;
+}
+
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 300px;
+    height: 550px;
+    background: linear-gradient(rgb(161, 196, 253),rgb(194, 233, 251));
+    border-radius: 15px;
+    position: relative;
+    padding: 30px;
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s ease-in-out;
+    margin: 0 50px;
+}
+
+.card:hover{
+    transform: translateY(-10px) scale(1.05);
+    /* transform: scale(1.03); */
+    box-shadow: 0px 0px 50px 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 0px 50px 6px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 50px 6px rgba(0,0,0,0.3);
+}
+
+.dm{
+    font-size: 150px;
+    color: var(--text-one);
+    font-family: "Josefin Sans";
+    text-transform: uppercase;
+    writing-mode:vertical-lr;
+    text-orientation:sideways-right;
+    position: absolute;
+    /* right: 0; */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 75px;
+    letter-spacing: -20px;
+    opacity: 0.2;
+}
+
+.validity{
+    font-size: 150px;
+    color: var(--ten-color);
+    font-family: "Josefin Sans";
+    z-index: 1;
+}
+
+.card ul{
+    margin: 30px 0;
+    z-index: 1;
+}
+
+.card ul li{
+    list-style: none;
+    color: var(--ten-color);
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+    font-family: "Archivo";
+}
+
+.price{
+    font-size: 30px;
+    color: var(--ten-color);
+    text-align: center;
+    line-height: 40px;
+    margin: 30px 0;
+    z-index: 1;
+}
+
+.dprice{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Josefin Sans";
+}
+
+.price h1{
+    font-weight: 900;
+    font-family: "Josefin Sans";
+    font-size: 60px;
+    letter-spacing: -3px;
+}
+
+.dprice span{
+    text-decoration: line-through;
+    font-family: "Josefin Sans";
+}
+
+.continu_btn{
+    background: var(--primary-color);
+    color: var(--text-two);
+    font-family: "Josefin Sans";
+    text-decoration: dashed;
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    font-weight: bold;
+    padding: 20px 40px 10px;
+    border-radius: 10px;
+    margin-bottom: -30px;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+}
+/* pricing container end */
+
+/* header end */
+
+/* FAQ start */
+.faq{
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 100px;
+    overflow: hidden;
+}
+
+.faq_heding{
+    font-size: 30px;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: 0 0 30px;
+}
+
+.accordion {
+    background-color: transparent;
+    color: var(--ten-color);
+    cursor: pointer;
+    padding: 18px 0;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.accordion i{
+    font-size: 20px;
+}
+  
+hr{
+    opacity: 0.4;
+}
+  
+.panel {
+    /* padding: 0 18px; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.panel p{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-one);
+    margin: 0 0 20px;
+}
+/* FAQ end */
+
+
+
+/* footer start */
+
+.footer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    padding: 20px 100px;
+    overflow: hidden;
+}
+
+.footer_social{
+    margin-bottom: 20px;
+}
+
+.footer_social ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+ 
+.footer_social ul li a i{
+    color: var(--text-one);
+    background-color: var(--text-two);
+    padding: 10px;
+    border-radius: 50px;
+    margin: 0 5px;
+    transition: 0.5s;
+}
+
+.footer_social ul li a i:hover{
+    transform: translateY(-10px);
+}
+
+.footer_btn .btn{
+    background: transparent;
+    border-radius: 50px;
+    border: 1px solid var(--text-two);
+    color: var(--text-two);
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 8px 20px;
+    overflow: hidden;
+    margin: 0 5px 30px 5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: var(--text-two);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.footer_text{
+    text-align: center;
+    
+}
+
+.footer_text h1::after{
+    content: '';
+    height: 1px;
+    width: 221px;
+    background: var(--text-two);
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0.3;
+}
+
+.footer_text h1{
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-two);
+    text-transform: uppercase;
+    margin: 15px;
+    position: relative;
+}
+
+.footer_text p{
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-two);
+    text-transform: capitalize;
+}
+
+.footer_text p span{
+    color: var(--text-one);
+    font-weight: bold;
+}
+
+.footer_img{
+    width: auto;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+/* footer end */
+
+/* =========================================================================== */
+
+/* media query  */
+
+@media screen and (max-width: 1000px){
+
+    /* navbar */
+    .d-1_nav{
+        padding: 20px 40px;
+        height: 100px;
+    }
+
+    .d-1_nav ul{
+        display: none;
+    }
+
+    .d-1_logo{
+        font-size: 24px;
+    }
+
+    #main_logo{
+        width: 94px;
+        height: 42px;
+    }
+
+    .toggle{
+        display: block;
+    }
+
+    .menu{
+        display: inline-flex;
+    }
+
+    .menu_btn{
+        display: block;
+        height: 35px;
+        width: 35px;
+        margin: 10px 10px 0 0;
+    }
+
+    .menu_close_btn{
+        /* display: block; */
+        height: 35px;
+        width: 35px;
+        margin: 10px 10px 0 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    /* =============== footer ============== */
+
+    .footer{
+        padding: 40px;
+        width: 100%;
+        height: auto;
+    }
+
+    .footer_text h1{
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .footer_text p{
+        font-size: 14px;
+    }
+
+    .footer_btn .btn{
+        font-weight: normal;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .selector{
+        width: 300px;
+        height: 50px;
+        margin: 50px;
+    }
+
+    .selector button{
+        font-size: 25px;
+    }
+
+    .swich{
+        width: 150px;
+        height: 40px;
+    }
+
+    .card{
+        margin: 50px 0;
+    }
+
+    .tagline img{
+        height: 200px;
+        width: auto;
+    }
+
+    .faq{
+        padding: 20px;
+        padding-bottom: 50px;
+    }
+
+    .faq_heding{
+        font-size: 25px;
+    }
+
+    .panel p{
+        font-size: 19px;
+    }
+
+    .background{
+        clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 50%);
+    }
+}
+
+@media screen and (max-width:1400px){
+    .header{
+        padding: 10px;
+    }
+    .card{
+        margin: 50px 10px;
+    }
+}
+
+@media screen and (max-width:350px){
+
+    .tagline img{
+        width: 100%;
+        height: auto;
+        padding: 30px;
+    }
+
+    .d-1_nav{
+        padding: 20px 15px;
+    }
+
+    .selector{
+        width: 200px;
+        height: 40px;
+        margin: 50px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .selector button{
+        font-size: 20px;
+    }
+
+    .swich{
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+    }
+
+    .header{
+        padding: 10px;
+    }
+    .card{
+        width: 100%;
+    }
+
+    .faq{
+        padding: 10px;
+        padding-bottom: 50px;
+    }
+
+    .faq_heding{
+        font-size: 22px;
+    }
+
+    .panel p{
+        font-size: 18px;
+    }
+
+    .accordion{
+        font-size: 21px;
+    }
+}
